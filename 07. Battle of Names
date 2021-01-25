@@ -1,0 +1,25 @@
+n = int(input())
+even = set()
+odd = set()
+for num in range(1, n + 1):
+    name = input()
+    sum_num = sum(ord(el) for el in name) // num
+    # sum_num = 0
+    # for el in name:
+    #     sum_num += ord(el)
+    # sum_num//num
+    if sum_num % 2 == 0:
+        even.add(sum_num)
+    else:
+        odd.add(sum_num)
+sum_even = sum(even)
+sum_odd = sum(odd)
+if sum_even == sum_odd:
+    modified = [str(el) for el in odd.union(even)]
+    print(', '.join(modified))
+elif sum_odd > sum_even:
+    modified = [str(el) for el in odd.difference(even)]
+    print(', '.join(modified))
+elif sum_even > sum_odd:
+    modified = [str(el) for el in odd.symmetric_difference(even)]
+    print(', '.join(modified))
