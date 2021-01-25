@@ -1,0 +1,15 @@
+data = input().split()
+n = int(data[0])
+m = int(data[1])
+
+n_set = set()
+m_set = set()
+for _ in range(n):
+    a = input()
+    n_set.add(a)
+for _ in range(m):
+    b = input()
+    m_set.add(b)
+result = n_set.intersection(m_set)
+for num in result:
+    print(num)
