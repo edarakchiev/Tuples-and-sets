@@ -1,0 +1,18 @@
+phonebook = {}
+n = None
+while True:
+    data = input()
+    if data.isdigit():
+        n = int(data)
+        break
+    name, number = data.split("-")
+    if name not in phonebook:
+        phonebook[name] = None
+    phonebook[name] = number
+
+for _ in range(n):
+    search_name = input()
+    if search_name in phonebook:
+        print(f"{search_name} -> {phonebook[search_name]}")
+    else:
+        print(f"Contact {search_name} does not exist.")
