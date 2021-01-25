@@ -1,0 +1,7 @@
+n = int(input())
+username = []
+for _ in range(n):
+    username.append(input())
+unique_username = set(username)
+for name in unique_username:
+    print(name)
