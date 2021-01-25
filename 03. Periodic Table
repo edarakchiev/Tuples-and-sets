@@ -1,0 +1,8 @@
+n = int(input())
+chemical_elements = set()
+for _ in range(n):
+    element = input().split()
+    for i in range(len(element)):
+        chemical_elements.add(element[i])
+for el in chemical_elements:
+    print(el)
